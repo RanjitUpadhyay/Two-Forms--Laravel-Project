@@ -30,6 +30,27 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\TableReservationController;
 
+use App\Http\Controllers\CourseEnrollmentController;
+use App\Http\Controllers\CourseController;
+
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TeacherSubjectController;
+
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductOrderController;
+
+use App\Http\Controllers\Book_Controller;
+use App\Http\Controllers\BookAuthorController;
+
+use App\Http\Controllers\VehicleBookingController;
+use App\Http\Controllers\VehicleController;
+
+use App\Http\Controllers\GymController;
+use App\Http\Controllers\GymMemberController;
+
+use App\Http\Controllers\InsuranceController;
+use App\Http\Controllers\InsurancePolicyController;
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -153,3 +174,92 @@ Route::post('/table-reservation',[TableReservationController::class,'store']);
 Route::get('/table-reservation/{id}',[TableReservationController::class,'show']);
 Route::put('/table-reservation/{id}',[TableReservationController::class,'update']);
 Route::delete('/table-reservation/{id}',[TableReservationController::class,'destroy']);
+
+//Course
+Route::get('/course',[CourseController::class,'index']);
+Route::post('/course',[CourseController::class,'store']);
+Route::get('/course/{id}',[CourseController::class,'show']);
+Route::put('/course/{id}',[CourseController::class,'update']);
+Route::delete('/course/{id}',[CourseController::class,'destroy']);
+
+Route::get('/course-enrollment',[CourseEnrollmentController::class,'index']);
+Route::post('/course-enrollment',[CourseEnrollmentController::class,'store']);
+Route::get('/course-enrollment/{id}',[CourseEnrollmentController::class,'show']);
+Route::put('/course-enrollment/{id}',[CourseEnrollmentController::class,'update']);
+Route::delete('/course-enrollment/{id}',[CourseEnrollmentController::class,'destroy']);
+
+Route::get('/teacher',[TeacherController::class,'index']);
+Route::post('teacher',[TeacherController::class,'store']);
+Route::get('/teacher/{id}',[TeacherController::class,'show']);
+Route::put('/teacher/{id}',[TeacherController::class,'update']);
+Route::delete('/teacher/{id}',[TeacherController::class,'destroy']);
+
+Route::get('/teacher-subject',[TeacherSubjectController::class,'index']);
+Route::post('teacher-subject',[TeacherSubjectController::class,'store']);
+Route::get('/teacher-subject/{id}',[TeacherSubjectController::class,'show']);
+Route::put('/teacher-subject/{id}',[TeacherSubjectController::class,'update']);
+Route::delete('/teacher-subject/{id}',[TeacherSubjectController::class,'destroy']);
+
+Route::get('/product',[ProductController::class,'index']);
+Route::post('/product',[ProductController::class,'store']);
+Route::get('/product/{id}',[ProductController::class,'show']);
+Route::put('/product/{id}',[ProductController::class,'update']);
+Route::delete('/product/{id}',[ProductController::class,'destroy']);
+
+Route::get('/product-order',[ProductOrderController::class,'index']);
+Route::post('/product-order',[ProductOrderController::class,'store']);
+Route::get('/product-order/{id}',[ProductOrderController::class,'show']);
+Route::put('/product-order/{id}',[ProductOrderController::class,'update']);
+Route::delete('/product-order/{id}',[ProductOrderController::class,'destroy']);
+
+//Author
+Route::get('author',[BookAuthorController::class,'index']);
+Route::post('author',[BookAuthorController::class,'store']);
+Route::get('author/{id}',[BookAuthorController::class,'show']);
+Route::put('author/{id}',[BookAuthorController::class,'update']);
+Route::delete('author/{id}',[BookAuthorController::class,'destroy']);
+
+Route::get('boook',[Book_Controller::class,'index']);
+Route::post('boook',[Book_Controller::class,'store']);
+Route::get('boook/{id}',[Book_Controller::class,'show']);
+Route::put('boook/{id}',[Book_Controller::class,'update']);
+Route::delete('boook/{id}',[Book_Controller::class,'destroy']);
+
+//Vehicle
+Route::get('/vehicle',[VehicleController::class,'index']);
+Route::post('/vehicle',[VehicleController::class,'store']);
+Route::get('/vehicle/{id}',[VehicleController::class,'show']);
+Route::put('/vehicle/{id}',[VehicleController::class,'update']);
+Route::delete('/vehicle/{id}',[VehicleController::class,'destroy']);
+
+Route::get('/vehicle-booking',[VehicleBookingController::class,'index']);
+Route::post('/vehicle-booking',[VehicleBookingController::class,'store']);
+Route::get('/vehicle-booking/{id}',[VehicleBookingController::class,'show']);
+Route::put('/vehicle-booking/{id}',[VehicleBookingController::class,'update']);
+Route::delete('/vehicle-booking/{id}',[VehicleBookingController::class,'destroy']);
+
+//Gym
+Route::get('/gym-member',[GymController::class,'index']);
+Route::post('/gym-member',[GymController::class,'store']);
+Route::get('/gym-member/{id}',[GymController::class,'show']);
+Route::put('/gym-member/{id}',[GymController::class,'update']);
+Route::delete('/gym-member/{id}',[GymController::class,'destroy']);
+
+Route::get('/membership',[GymMemberController::class,'index']);
+Route::post('/membership',[GymMemberController::class,'store']);
+Route::get('/membership/{id}',[GymMemberController::class,'show']);
+Route::put('/membership/{id}',[GymMemberController::class,'update']);
+Route::delete('/membership/{id}',[GymMemberController::class,'destroy']);
+
+//Insurance
+Route::get('/insurance/customer',[InsuranceController::class,'index']);
+Route::post('/insurance/customer',[InsuranceController::class,'store']);
+Route::get('/insurance/customer/{id}',[InsuranceController::class,'show']);
+Route::put('/insurance/customer/{id}',[InsuranceController::class,'update']);
+Route::delete('/insurance/customer/{id}',[InsuranceController::class,'destroy']);
+
+Route::get('/insurance/policy',[InsurancePolicyController::class,'index']);
+Route::post('/insurance/policy',[InsurancePolicyController::class,'store']);
+Route::get('/insurance/policy/{id}',[InsurancePolicyController::class,'show']);
+Route::put('/insurance/policy/{id}',[InsurancePolicyController::class,'update']);
+Route::delete('/insurance/policy/{id}',[InsurancePolicyController::class,'destroy']);

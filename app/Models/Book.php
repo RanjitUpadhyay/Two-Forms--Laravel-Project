@@ -13,10 +13,10 @@ class Book extends Model
 
     protected $fillable=
     [
-    'book_name',
-    'category',
-    'price',
-    'status'
+    "book_name",
+    "category",
+    "price",
+    "status"
     ];
 
     function issues()
